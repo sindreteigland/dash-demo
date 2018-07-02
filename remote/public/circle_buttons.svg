@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 900 900" xml:space="preserve">
+<g id="Circle">
+	<path id="up" fill="#2D2D2D" stroke="#FFFFFF" stroke-miterlimit="10" d="M759.8,140.2C680.5,61,571,12,450.1,12
+		C329,12,219.4,61.1,140.1,140.5l309.7,309.7L759.8,140.2z"/>
+	<path id="right" fill="#2D2D2D" stroke="#FFFFFF" stroke-miterlimit="10" d="M759.8,759.9C839,680.6,888,571.1,888,450.2
+		c0-121.1-49.1-230.6-128.5-309.9L449.9,450L759.8,759.9z"/>
+	<path id="down_3_" fill="#2D2D2D" stroke="#FFFFFF" stroke-miterlimit="10" d="M140.1,759.9c79.3,79.2,188.8,128.2,309.7,128.2
+		c121.1,0,230.6-49.1,309.9-128.5L450.1,450L140.1,759.9z"/>
+	<path id="left" fill="#2D2D2D" stroke="#FFFFFF" stroke-miterlimit="10" d="M140.3,140.2C61.1,219.4,12,329,12,449.9
+		c0,121.1,49.1,230.8,128.4,310l309.8-309.8L140.3,140.2z"/>
+	<circle id="enter" fill="#2D2D2D" stroke="#FFFFFF" stroke-miterlimit="10" cx="450" cy="450" r="190.6"/>
+</g>
+</svg>
