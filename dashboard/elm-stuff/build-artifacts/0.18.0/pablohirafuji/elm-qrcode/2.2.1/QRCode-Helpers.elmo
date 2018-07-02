@@ -1,0 +1,80 @@
+var _pablohirafuji$elm_qrcode$QRCode_Helpers$transpose = function (ll) {
+	transpose:
+	while (true) {
+		var _p0 = ll;
+		if (_p0.ctor === '[]') {
+			return {ctor: '[]'};
+		} else {
+			if (_p0._0.ctor === '[]') {
+				var _v1 = _p0._1;
+				ll = _v1;
+				continue transpose;
+			} else {
+				var _p1 = _p0._1;
+				var tails = A2(_elm_lang$core$List$filterMap, _elm_lang$core$List$tail, _p1);
+				var heads = A2(_elm_lang$core$List$filterMap, _elm_lang$core$List$head, _p1);
+				return {
+					ctor: '::',
+					_0: {ctor: '::', _0: _p0._0._0, _1: heads},
+					_1: _pablohirafuji$elm_qrcode$QRCode_Helpers$transpose(
+						{ctor: '::', _0: _p0._0._1, _1: tails})
+				};
+			}
+		}
+	}
+};
+var _pablohirafuji$elm_qrcode$QRCode_Helpers$breaker = F3(
+	function (width, string, acc) {
+		breaker:
+		while (true) {
+			var _p2 = string;
+			if (_p2 === '') {
+				return _elm_lang$core$List$reverse(acc);
+			} else {
+				var _v3 = width,
+					_v4 = A2(_elm_lang$core$String$dropLeft, width, string),
+					_v5 = {
+					ctor: '::',
+					_0: A3(_elm_lang$core$String$slice, 0, width, string),
+					_1: acc
+				};
+				width = _v3;
+				string = _v4;
+				acc = _v5;
+				continue breaker;
+			}
+		}
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Helpers$breakStr = F2(
+	function (width, string) {
+		return (_elm_lang$core$Native_Utils.eq(width, 0) || _elm_lang$core$Native_Utils.eq(string, '')) ? {
+			ctor: '::',
+			_0: string,
+			_1: {ctor: '[]'}
+		} : A3(
+			_pablohirafuji$elm_qrcode$QRCode_Helpers$breaker,
+			width,
+			string,
+			{ctor: '[]'});
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Helpers$listResult = F3(
+	function (fun, listb, lista) {
+		var _p3 = lista;
+		if (_p3.ctor === '::') {
+			return A2(
+				_elm_lang$core$Result$andThen,
+				A2(
+					_elm_lang$core$Basics$flip,
+					_pablohirafuji$elm_qrcode$QRCode_Helpers$listResult(fun),
+					_p3._1),
+				A2(
+					_elm_lang$core$Result$map,
+					function (r) {
+						return {ctor: '::', _0: r, _1: listb};
+					},
+					fun(_p3._0)));
+		} else {
+			return _elm_lang$core$Result$Ok(
+				_elm_lang$core$List$reverse(listb));
+		}
+	});

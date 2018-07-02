@@ -1,0 +1,18 @@
+var _pablohirafuji$elm_qrcode$QRCode_Render_String$view = function (_p0) {
+	return _elm_lang$core$String$concat(
+		A2(
+			_elm_lang$core$List$intersperse,
+			'\n',
+			A2(
+				_elm_lang$core$List$map,
+				function (_p1) {
+					return _elm_lang$core$String$concat(
+						A2(
+							_elm_lang$core$List$map,
+							function (isDark) {
+								return isDark ? '■' : ' ';
+							},
+							_p1));
+				},
+				_p0)));
+};

@@ -1,0 +1,138 @@
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasModule = function (moduleSize) {
+	return A2(
+		_evancz$elm_graphics$Collage$filled,
+		_elm_lang$core$Color$black,
+		_evancz$elm_graphics$Collage$square(
+			_elm_lang$core$Basics$toFloat(moduleSize)));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasRow2 = F2(
+	function (moduleSize, row) {
+		return _evancz$elm_graphics$Collage$group(
+			A2(
+				_elm_lang$core$List$filterMap,
+				_elm_lang$core$Basics$identity,
+				A2(
+					_elm_lang$core$List$indexedMap,
+					F2(
+						function (index, isDark) {
+							return isDark ? _elm_lang$core$Maybe$Just(
+								A2(
+									_evancz$elm_graphics$Collage$moveX,
+									_elm_lang$core$Basics$toFloat(index * moduleSize) + 0.5,
+									_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasModule(moduleSize))) : _elm_lang$core$Maybe$Nothing;
+						}),
+					row)));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$matrixToForm2 = F2(
+	function (moduleSize, matrix) {
+		return _evancz$elm_graphics$Collage$group(
+			A2(
+				_elm_lang$core$List$indexedMap,
+				F2(
+					function (index, row) {
+						return A2(
+							_evancz$elm_graphics$Collage$moveY,
+							_elm_lang$core$Basics$toFloat((0 - index) * moduleSize) + 0.5,
+							A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasRow2, moduleSize, row));
+					}),
+				matrix));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasRow = F2(
+	function (moduleSize, row) {
+		return _evancz$elm_graphics$Collage$group(
+			A2(
+				_elm_lang$core$List$filterMap,
+				_elm_lang$core$Basics$identity,
+				A2(
+					_elm_lang$core$List$indexedMap,
+					F2(
+						function (index, isDark) {
+							return isDark ? _elm_lang$core$Maybe$Just(
+								A2(
+									_evancz$elm_graphics$Collage$moveX,
+									_elm_lang$core$Basics$toFloat(index * moduleSize),
+									_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasModule(moduleSize))) : _elm_lang$core$Maybe$Nothing;
+						}),
+					row)));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$matrixToForm = F2(
+	function (moduleSize, matrix) {
+		return _evancz$elm_graphics$Collage$group(
+			A2(
+				_elm_lang$core$List$indexedMap,
+				F2(
+					function (index, row) {
+						return A2(
+							_evancz$elm_graphics$Collage$moveY,
+							_elm_lang$core$Basics$toFloat((0 - index) * moduleSize),
+							A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$canvasRow, moduleSize, row));
+					}),
+				matrix));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$viewWithAbsoluteSize = F2(
+	function (matrixAbsSize, matrix) {
+		var length = _elm_lang$core$List$length(matrix);
+		var moduleSize = _elm_lang$core$Basics$floor(
+			_elm_lang$core$Basics$toFloat(matrixAbsSize) / _elm_lang$core$Basics$toFloat(length + 8));
+		var quietZone = matrixAbsSize - (moduleSize * length);
+		var qrCodeSize = length * moduleSize;
+		var totalSize = qrCodeSize + quietZone;
+		var centerDistance = _elm_lang$core$Basics$toFloat(qrCodeSize - moduleSize) / 2;
+		return _evancz$elm_graphics$Element$toHtml(
+			A3(
+				_evancz$elm_graphics$Collage$collage,
+				totalSize,
+				totalSize,
+				{
+					ctor: '::',
+					_0: A2(
+						_evancz$elm_graphics$Collage$filled,
+						_elm_lang$core$Color$white,
+						_evancz$elm_graphics$Collage$square(
+							_elm_lang$core$Basics$toFloat(totalSize))),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.eq(
+							A2(_elm_lang$core$Basics_ops['%'], totalSize + moduleSize, 2),
+							0) ? A2(
+							_evancz$elm_graphics$Collage$move,
+							{ctor: '_Tuple2', _0: 0 - centerDistance, _1: centerDistance},
+							A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$matrixToForm, moduleSize, matrix)) : A2(
+							_evancz$elm_graphics$Collage$move,
+							{ctor: '_Tuple2', _0: 0 - centerDistance, _1: centerDistance},
+							A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$matrixToForm2, moduleSize, matrix)),
+						_1: {ctor: '[]'}
+					}
+				}));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$viewWithModuleSize = F2(
+	function (moduleSize, matrix) {
+		var qrCodeSize = _elm_lang$core$List$length(matrix) * moduleSize;
+		var centerDistance = _elm_lang$core$Basics$toFloat(qrCodeSize - moduleSize) / 2;
+		var quietZone = 8 * moduleSize;
+		var totalSize = qrCodeSize + quietZone;
+		return _evancz$elm_graphics$Element$toHtml(
+			A3(
+				_evancz$elm_graphics$Collage$collage,
+				totalSize,
+				totalSize,
+				{
+					ctor: '::',
+					_0: A2(
+						_evancz$elm_graphics$Collage$filled,
+						_elm_lang$core$Color$white,
+						_evancz$elm_graphics$Collage$square(
+							_elm_lang$core$Basics$toFloat(totalSize))),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_evancz$elm_graphics$Collage$move,
+							{ctor: '_Tuple2', _0: 0 - centerDistance, _1: centerDistance},
+							A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$matrixToForm, moduleSize, matrix)),
+						_1: {ctor: '[]'}
+					}
+				}));
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Canvas$view = function (matrix) {
+	return A2(_pablohirafuji$elm_qrcode$QRCode_Render_Canvas$viewWithModuleSize, 5, matrix);
+};

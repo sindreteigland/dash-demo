@@ -1,0 +1,10 @@
+var _pablohirafuji$elm_qrcode$QRCode_Error$InputLengthOverflow = {ctor: 'InputLengthOverflow'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$PolynomialModException = {ctor: 'PolynomialModException'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$PolynomialMultiplyException = {ctor: 'PolynomialMultiplyException'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$LogTableException = function (a) {
+	return {ctor: 'LogTableException', _0: a};
+};
+var _pablohirafuji$elm_qrcode$QRCode_Error$InvalidUTF8Char = {ctor: 'InvalidUTF8Char'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$InvalidAlphanumericChar = {ctor: 'InvalidAlphanumericChar'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$InvalidNumericChar = {ctor: 'InvalidNumericChar'};
+var _pablohirafuji$elm_qrcode$QRCode_Error$AlignmentPatternNotFound = {ctor: 'AlignmentPatternNotFound'};

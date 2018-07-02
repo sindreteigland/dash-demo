@@ -1,0 +1,434 @@
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$alphanumericCodes = _elm_lang$core$Dict$fromList(
+	{
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.chr('0'),
+			_1: 0
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.chr('1'),
+				_1: 1
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.chr('2'),
+					_1: 2
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.chr('3'),
+						_1: 3
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: _elm_lang$core$Native_Utils.chr('4'),
+							_1: 4
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.chr('5'),
+								_1: 5
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: _elm_lang$core$Native_Utils.chr('6'),
+									_1: 6
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: _elm_lang$core$Native_Utils.chr('7'),
+										_1: 7
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: _elm_lang$core$Native_Utils.chr('8'),
+											_1: 8
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: _elm_lang$core$Native_Utils.chr('9'),
+												_1: 9
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: _elm_lang$core$Native_Utils.chr('A'),
+													_1: 10
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: _elm_lang$core$Native_Utils.chr('B'),
+														_1: 11
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '_Tuple2',
+															_0: _elm_lang$core$Native_Utils.chr('C'),
+															_1: 12
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '_Tuple2',
+																_0: _elm_lang$core$Native_Utils.chr('D'),
+																_1: 13
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '_Tuple2',
+																	_0: _elm_lang$core$Native_Utils.chr('E'),
+																	_1: 14
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		ctor: '_Tuple2',
+																		_0: _elm_lang$core$Native_Utils.chr('F'),
+																		_1: 15
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			ctor: '_Tuple2',
+																			_0: _elm_lang$core$Native_Utils.chr('G'),
+																			_1: 16
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				ctor: '_Tuple2',
+																				_0: _elm_lang$core$Native_Utils.chr('H'),
+																				_1: 17
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					ctor: '_Tuple2',
+																					_0: _elm_lang$core$Native_Utils.chr('I'),
+																					_1: 18
+																				},
+																				_1: {
+																					ctor: '::',
+																					_0: {
+																						ctor: '_Tuple2',
+																						_0: _elm_lang$core$Native_Utils.chr('J'),
+																						_1: 19
+																					},
+																					_1: {
+																						ctor: '::',
+																						_0: {
+																							ctor: '_Tuple2',
+																							_0: _elm_lang$core$Native_Utils.chr('K'),
+																							_1: 20
+																						},
+																						_1: {
+																							ctor: '::',
+																							_0: {
+																								ctor: '_Tuple2',
+																								_0: _elm_lang$core$Native_Utils.chr('L'),
+																								_1: 21
+																							},
+																							_1: {
+																								ctor: '::',
+																								_0: {
+																									ctor: '_Tuple2',
+																									_0: _elm_lang$core$Native_Utils.chr('M'),
+																									_1: 22
+																								},
+																								_1: {
+																									ctor: '::',
+																									_0: {
+																										ctor: '_Tuple2',
+																										_0: _elm_lang$core$Native_Utils.chr('N'),
+																										_1: 23
+																									},
+																									_1: {
+																										ctor: '::',
+																										_0: {
+																											ctor: '_Tuple2',
+																											_0: _elm_lang$core$Native_Utils.chr('O'),
+																											_1: 24
+																										},
+																										_1: {
+																											ctor: '::',
+																											_0: {
+																												ctor: '_Tuple2',
+																												_0: _elm_lang$core$Native_Utils.chr('P'),
+																												_1: 25
+																											},
+																											_1: {
+																												ctor: '::',
+																												_0: {
+																													ctor: '_Tuple2',
+																													_0: _elm_lang$core$Native_Utils.chr('Q'),
+																													_1: 26
+																												},
+																												_1: {
+																													ctor: '::',
+																													_0: {
+																														ctor: '_Tuple2',
+																														_0: _elm_lang$core$Native_Utils.chr('R'),
+																														_1: 27
+																													},
+																													_1: {
+																														ctor: '::',
+																														_0: {
+																															ctor: '_Tuple2',
+																															_0: _elm_lang$core$Native_Utils.chr('S'),
+																															_1: 28
+																														},
+																														_1: {
+																															ctor: '::',
+																															_0: {
+																																ctor: '_Tuple2',
+																																_0: _elm_lang$core$Native_Utils.chr('T'),
+																																_1: 29
+																															},
+																															_1: {
+																																ctor: '::',
+																																_0: {
+																																	ctor: '_Tuple2',
+																																	_0: _elm_lang$core$Native_Utils.chr('U'),
+																																	_1: 30
+																																},
+																																_1: {
+																																	ctor: '::',
+																																	_0: {
+																																		ctor: '_Tuple2',
+																																		_0: _elm_lang$core$Native_Utils.chr('V'),
+																																		_1: 31
+																																	},
+																																	_1: {
+																																		ctor: '::',
+																																		_0: {
+																																			ctor: '_Tuple2',
+																																			_0: _elm_lang$core$Native_Utils.chr('W'),
+																																			_1: 32
+																																		},
+																																		_1: {
+																																			ctor: '::',
+																																			_0: {
+																																				ctor: '_Tuple2',
+																																				_0: _elm_lang$core$Native_Utils.chr('X'),
+																																				_1: 33
+																																			},
+																																			_1: {
+																																				ctor: '::',
+																																				_0: {
+																																					ctor: '_Tuple2',
+																																					_0: _elm_lang$core$Native_Utils.chr('Y'),
+																																					_1: 34
+																																				},
+																																				_1: {
+																																					ctor: '::',
+																																					_0: {
+																																						ctor: '_Tuple2',
+																																						_0: _elm_lang$core$Native_Utils.chr('Z'),
+																																						_1: 35
+																																					},
+																																					_1: {
+																																						ctor: '::',
+																																						_0: {
+																																							ctor: '_Tuple2',
+																																							_0: _elm_lang$core$Native_Utils.chr(' '),
+																																							_1: 36
+																																						},
+																																						_1: {
+																																							ctor: '::',
+																																							_0: {
+																																								ctor: '_Tuple2',
+																																								_0: _elm_lang$core$Native_Utils.chr('$'),
+																																								_1: 37
+																																							},
+																																							_1: {
+																																								ctor: '::',
+																																								_0: {
+																																									ctor: '_Tuple2',
+																																									_0: _elm_lang$core$Native_Utils.chr('%'),
+																																									_1: 38
+																																								},
+																																								_1: {
+																																									ctor: '::',
+																																									_0: {
+																																										ctor: '_Tuple2',
+																																										_0: _elm_lang$core$Native_Utils.chr('*'),
+																																										_1: 39
+																																									},
+																																									_1: {
+																																										ctor: '::',
+																																										_0: {
+																																											ctor: '_Tuple2',
+																																											_0: _elm_lang$core$Native_Utils.chr('+'),
+																																											_1: 40
+																																										},
+																																										_1: {
+																																											ctor: '::',
+																																											_0: {
+																																												ctor: '_Tuple2',
+																																												_0: _elm_lang$core$Native_Utils.chr('-'),
+																																												_1: 41
+																																											},
+																																											_1: {
+																																												ctor: '::',
+																																												_0: {
+																																													ctor: '_Tuple2',
+																																													_0: _elm_lang$core$Native_Utils.chr('.'),
+																																													_1: 42
+																																												},
+																																												_1: {
+																																													ctor: '::',
+																																													_0: {
+																																														ctor: '_Tuple2',
+																																														_0: _elm_lang$core$Native_Utils.chr('/'),
+																																														_1: 43
+																																													},
+																																													_1: {
+																																														ctor: '::',
+																																														_0: {
+																																															ctor: '_Tuple2',
+																																															_0: _elm_lang$core$Native_Utils.chr(':'),
+																																															_1: 44
+																																														},
+																																														_1: {ctor: '[]'}
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toAlphanumericCode = function ($char) {
+	return A2(
+		_elm_lang$core$Result$fromMaybe,
+		_pablohirafuji$elm_qrcode$QRCode_Error$InvalidAlphanumericChar,
+		A2(_elm_lang$core$Dict$get, $char, _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$alphanumericCodes));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toBinary = function (str) {
+	var _p0 = _elm_lang$core$String$toList(str);
+	_v0_2:
+	do {
+		if (_p0.ctor === '::') {
+			if (_p0._1.ctor === '::') {
+				if (_p0._1._1.ctor === '[]') {
+					return A2(
+						_elm_lang$core$Result$map,
+						A2(
+							_elm_lang$core$Basics$flip,
+							F2(
+								function (v0, v1) {
+									return {ctor: '_Tuple2', _0: v0, _1: v1};
+								}),
+							11),
+						A2(
+							_elm_lang$core$Result$map,
+							function (_p1) {
+								var _p2 = _p1;
+								return (_p2._0 * 45) + _p2._1;
+							},
+							A2(
+								_elm_lang$core$Result$andThen,
+								function (firstCode) {
+									return A2(
+										_elm_lang$core$Result$map,
+										F2(
+											function (v0, v1) {
+												return {ctor: '_Tuple2', _0: v0, _1: v1};
+											})(firstCode),
+										_pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toAlphanumericCode(_p0._1._0));
+								},
+								_pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toAlphanumericCode(_p0._0))));
+				} else {
+					break _v0_2;
+				}
+			} else {
+				return A2(
+					_elm_lang$core$Result$map,
+					A2(
+						_elm_lang$core$Basics$flip,
+						F2(
+							function (v0, v1) {
+								return {ctor: '_Tuple2', _0: v0, _1: v1};
+							}),
+						6),
+					_pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toAlphanumericCode(_p0._0));
+			}
+		} else {
+			break _v0_2;
+		}
+	} while(false);
+	return _elm_lang$core$Result$Err(_pablohirafuji$elm_qrcode$QRCode_Error$InvalidAlphanumericChar);
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$encode = function (str) {
+	return A3(
+		_pablohirafuji$elm_qrcode$QRCode_Helpers$listResult,
+		_pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$toBinary,
+		{ctor: '[]'},
+		A2(_pablohirafuji$elm_qrcode$QRCode_Helpers$breakStr, 2, str));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$isValidRegex = _elm_lang$core$Regex$regex('^[0-9A-Z $%*+\\-.\\/:]+$');
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$isValid = function (input) {
+	return A2(_elm_lang$core$Regex$contains, _pablohirafuji$elm_qrcode$QRCode_Encode_Alphanumeric$isValidRegex, input);
+};

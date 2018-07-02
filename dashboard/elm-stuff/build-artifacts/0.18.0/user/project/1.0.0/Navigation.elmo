@@ -1,0 +1,63 @@
+var _user$project$Navigation$convertInputToCommand = F2(
+	function (code, navigationMap) {
+		return _elm_lang$core$Native_Utils.eq(code, 39) ? navigationMap.arrowRight : (_elm_lang$core$Native_Utils.eq(code, 38) ? navigationMap.arrowUp : (_elm_lang$core$Native_Utils.eq(code, 37) ? navigationMap.arrowLeft : (_elm_lang$core$Native_Utils.eq(code, 40) ? navigationMap.arrowDown : (_elm_lang$core$Native_Utils.eq(code, 13) ? navigationMap.enter : ((_elm_lang$core$Native_Utils.eq(code, 8) || _elm_lang$core$Native_Utils.eq(code, 27)) ? navigationMap.back : navigationMap.arrowRight)))));
+	});
+var _user$project$Navigation$NavigationMap = F6(
+	function (a, b, c, d, e, f) {
+		return {arrowLeft: a, arrowUp: b, arrowRight: c, arrowDown: d, enter: e, back: f};
+	});
+var _user$project$Navigation$ExitModule = {ctor: 'ExitModule'};
+var _user$project$Navigation$EnterModule = {ctor: 'EnterModule'};
+var _user$project$Navigation$JumpPreviousRow = {ctor: 'JumpPreviousRow'};
+var _user$project$Navigation$JumpNextRow = {ctor: 'JumpNextRow'};
+var _user$project$Navigation$MovePrevious = {ctor: 'MovePrevious'};
+var _user$project$Navigation$MoveNext = {ctor: 'MoveNext'};
+var _user$project$Navigation$defaultNavigator = {arrowLeft: _user$project$Navigation$MovePrevious, arrowUp: _user$project$Navigation$JumpPreviousRow, arrowRight: _user$project$Navigation$MoveNext, arrowDown: _user$project$Navigation$JumpNextRow, enter: _user$project$Navigation$MoveNext, back: _user$project$Navigation$ExitModule};
+var _user$project$Navigation$toolbarNavigator = {arrowLeft: _user$project$Navigation$ExitModule, arrowUp: _user$project$Navigation$MovePrevious, arrowRight: _user$project$Navigation$EnterModule, arrowDown: _user$project$Navigation$MoveNext, enter: _user$project$Navigation$EnterModule, back: _user$project$Navigation$MoveNext};
+var _user$project$Navigation$navigator = F2(
+	function (model, command) {
+		var _p0 = command;
+		switch (_p0.ctor) {
+			case 'MoveNext':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{position: model.position + 1});
+			case 'MovePrevious':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{position: model.position - 1});
+			case 'JumpNextRow':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{position: model.position + model.currentPage.gridSize});
+			case 'JumpPreviousRow':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{position: model.position - model.currentPage.gridSize});
+			case 'EnterModule':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						navigationPath: A2(
+							_elm_lang$core$List$append,
+							model.navigationPath,
+							{
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: 'mainGrid', _1: 0},
+								_1: {ctor: '[]'}
+							}),
+						navigator: _user$project$Navigation$defaultNavigator
+					});
+			default:
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						navigationPath: A2(_elm_lang$core$List$drop, 1, model.navigationPath),
+						navigator: _user$project$Navigation$toolbarNavigator
+					});
+		}
+	});
+var _user$project$Navigation$Wrap = {ctor: 'Wrap'};
+var _user$project$Navigation$NoHorizontalWrap = {ctor: 'NoHorizontalWrap'};
+var _user$project$Navigation$NoVerticalWrap = {ctor: 'NoVerticalWrap'};
+var _user$project$Navigation$NoWrap = {ctor: 'NoWrap'};

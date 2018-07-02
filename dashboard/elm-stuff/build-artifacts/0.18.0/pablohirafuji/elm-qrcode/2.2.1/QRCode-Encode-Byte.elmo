@@ -1,0 +1,44 @@
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Byte$encodeHelp = F2(
+	function (str, bytes) {
+		encodeHelp:
+		while (true) {
+			var _p0 = _elm_lang$core$String$uncons(str);
+			if (_p0.ctor === 'Just') {
+				var _v1 = _p0._0._1,
+					_v2 = A3(
+					_elm_lang$core$Basics$flip,
+					F2(
+						function (x, y) {
+							return {ctor: '::', _0: x, _1: y};
+						}),
+					bytes,
+					_elm_lang$core$Char$toCode(_p0._0._0));
+				str = _v1;
+				bytes = _v2;
+				continue encodeHelp;
+			} else {
+				return _elm_lang$core$Result$Ok(
+					_elm_lang$core$List$reverse(bytes));
+			}
+		}
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Byte$encode = function (str) {
+	return A2(
+		_elm_lang$core$Result$map,
+		_elm_lang$core$List$map(
+			A2(
+				_elm_lang$core$Basics$flip,
+				F2(
+					function (v0, v1) {
+						return {ctor: '_Tuple2', _0: v0, _1: v1};
+					}),
+				8)),
+		A2(
+			_pablohirafuji$elm_qrcode$QRCode_Encode_Byte$encodeHelp,
+			str,
+			{ctor: '[]'}));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Byte$isValidRegex = _elm_lang$core$Regex$regex('^[\\u0000-\\u00ff]+$');
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Byte$isValid = function (input) {
+	return A2(_elm_lang$core$Regex$contains, _pablohirafuji$elm_qrcode$QRCode_Encode_Byte$isValidRegex, input);
+};

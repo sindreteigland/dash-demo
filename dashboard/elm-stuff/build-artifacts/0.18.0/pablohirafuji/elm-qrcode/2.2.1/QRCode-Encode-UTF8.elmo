@@ -1,0 +1,118 @@
+var _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63 = _elm_lang$core$Bitwise$and(63);
+var _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp = F2(
+	function (str, list) {
+		var _p0 = _elm_lang$core$String$uncons(str);
+		if (_p0.ctor === 'Just') {
+			return A3(
+				_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$utf8ToByte,
+				list,
+				_p0._0._1,
+				_elm_lang$core$Char$toCode(_p0._0._0));
+		} else {
+			return _elm_lang$core$Result$Ok(
+				_elm_lang$core$List$reverse(list));
+		}
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$utf8ToByte = F3(
+	function (list, remainStr, charCode) {
+		if (_elm_lang$core$Native_Utils.cmp(charCode, 128) < 0) {
+			return A2(
+				_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp,
+				remainStr,
+				{ctor: '::', _0: charCode, _1: list});
+		} else {
+			if (_elm_lang$core$Native_Utils.cmp(charCode, 2048) < 0) {
+				return A2(
+					_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp,
+					remainStr,
+					A2(
+						F2(
+							function (x, y) {
+								return {ctor: '::', _0: x, _1: y};
+							}),
+						128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charCode),
+						A2(
+							F2(
+								function (x, y) {
+									return {ctor: '::', _0: x, _1: y};
+								}),
+							192 | (charCode >> 6),
+							list)));
+			} else {
+				if ((_elm_lang$core$Native_Utils.cmp(charCode, 55296) < 0) || (_elm_lang$core$Native_Utils.cmp(charCode, 57344) > -1)) {
+					return A2(
+						_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp,
+						remainStr,
+						A2(
+							F2(
+								function (x, y) {
+									return {ctor: '::', _0: x, _1: y};
+								}),
+							128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charCode),
+							A2(
+								F2(
+									function (x, y) {
+										return {ctor: '::', _0: x, _1: y};
+									}),
+								128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charCode >> 6),
+								A2(
+									F2(
+										function (x, y) {
+											return {ctor: '::', _0: x, _1: y};
+										}),
+									224 | (charCode >> 12),
+									list))));
+				} else {
+					var _p1 = _elm_lang$core$String$uncons(remainStr);
+					if (_p1.ctor === 'Just') {
+						var nextCharCode = _elm_lang$core$Char$toCode(_p1._0._0);
+						var charC = A2(
+							F2(
+								function (x, y) {
+									return x + y;
+								}),
+							65536,
+							(1023 & nextCharCode) | ((1023 & charCode) << 10));
+						var byte1 = 240 | (charC >> 18);
+						var byte2 = 128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charC >> 12);
+						var byte3 = 128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charC >> 6);
+						var byte4 = 128 | _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$and63(charC);
+						return A2(
+							_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp,
+							_p1._0._1,
+							{
+								ctor: '::',
+								_0: byte4,
+								_1: {
+									ctor: '::',
+									_0: byte3,
+									_1: {
+										ctor: '::',
+										_0: byte2,
+										_1: {ctor: '::', _0: byte1, _1: list}
+									}
+								}
+							});
+					} else {
+						return _elm_lang$core$Result$Err(_pablohirafuji$elm_qrcode$QRCode_Error$InvalidUTF8Char);
+					}
+				}
+			}
+		}
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encode = function (str) {
+	return A2(
+		_elm_lang$core$Result$map,
+		_elm_lang$core$List$map(
+			A2(
+				_elm_lang$core$Basics$flip,
+				F2(
+					function (v0, v1) {
+						return {ctor: '_Tuple2', _0: v0, _1: v1};
+					}),
+				8)),
+		A2(
+			_pablohirafuji$elm_qrcode$QRCode_Encode_UTF8$encodeHelp,
+			str,
+			{ctor: '[]'}));
+};

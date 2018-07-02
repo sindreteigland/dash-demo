@@ -1,0 +1,78 @@
+var _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize = 5;
+var _pablohirafuji$elm_qrcode$QRCode_Render_Svg$rectView = F2(
+	function (row, col) {
+		return A2(
+			_elm_lang$svg$Svg$rect,
+			{
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$y(
+					_elm_lang$core$Basics$toString(row * _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x(
+						_elm_lang$core$Basics$toString(col * _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$width(
+							_elm_lang$core$Basics$toString(_pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$height(
+								_elm_lang$core$Basics$toString(_pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$fill('black'),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			},
+			{ctor: '[]'});
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleView = F3(
+	function (rowIndex, colIndex, isDark) {
+		return isDark ? _elm_lang$core$Maybe$Just(
+			A2(_pablohirafuji$elm_qrcode$QRCode_Render_Svg$rectView, rowIndex + 4, colIndex + 4)) : _elm_lang$core$Maybe$Nothing;
+	});
+var _pablohirafuji$elm_qrcode$QRCode_Render_Svg$view = function (matrix) {
+	var quietZone = 8 * _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize;
+	var sizePx = _elm_lang$core$Basics$toString(
+		(_elm_lang$core$List$length(matrix) * _pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleSize) + quietZone);
+	return A2(
+		_elm_lang$svg$Svg$svg,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$width(sizePx),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$height(sizePx),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$viewBox(
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'0 0 ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								sizePx,
+								A2(_elm_lang$core$Basics_ops['++'], ' ', sizePx)))),
+					_1: {ctor: '[]'}
+				}
+			}
+		},
+		A2(
+			_elm_lang$core$List$filterMap,
+			_elm_lang$core$Basics$identity,
+			_elm_lang$core$List$concat(
+				A2(
+					_elm_lang$core$List$indexedMap,
+					F2(
+						function (rowIndex, row) {
+							return A2(
+								_elm_lang$core$List$indexedMap,
+								_pablohirafuji$elm_qrcode$QRCode_Render_Svg$moduleView(rowIndex),
+								row);
+						}),
+					matrix))));
+};

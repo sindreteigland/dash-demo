@@ -1,0 +1,37 @@
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$numericLength = function (str) {
+	var _p0 = _elm_lang$core$String$length(str);
+	switch (_p0) {
+		case 1:
+			return 4;
+		case 2:
+			return 7;
+		default:
+			return 10;
+	}
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$encodeHelp = function (str) {
+	return A2(
+		_elm_lang$core$Result$mapError,
+		_elm_lang$core$Basics$always(_pablohirafuji$elm_qrcode$QRCode_Error$InvalidNumericChar),
+		A2(
+			_elm_lang$core$Result$map,
+			A2(
+				_elm_lang$core$Basics$flip,
+				F2(
+					function (v0, v1) {
+						return {ctor: '_Tuple2', _0: v0, _1: v1};
+					}),
+				_pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$numericLength(str)),
+			_elm_lang$core$String$toInt(str)));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$encode = function (str) {
+	return A3(
+		_pablohirafuji$elm_qrcode$QRCode_Helpers$listResult,
+		_pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$encodeHelp,
+		{ctor: '[]'},
+		A2(_pablohirafuji$elm_qrcode$QRCode_Helpers$breakStr, 3, str));
+};
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$isValidRegex = _elm_lang$core$Regex$regex('^[0-9]+$');
+var _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$isValid = function (input) {
+	return A2(_elm_lang$core$Regex$contains, _pablohirafuji$elm_qrcode$QRCode_Encode_Numeric$isValidRegex, input);
+};
